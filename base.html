@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cropio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="logo5.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <nav>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      <ul class="menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Cropio</h1>
+      <p>Find the best crops to plant based on your current crops and topography.</p>
+    </div>
+  </header>
+  <main>
+    <section class="input-section">
+      <h2>Enter Your Information</h2>
+      <form>
+        <div class="form-group">
+          <label for="current-crop">Current Crop</label>
+          <select name="current-crop" id="current-crop">
+            <option value="corn">Corn</option>
+            <option value="wheat">Wheat</option>
+            <option value="soybeans">Soybeans</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="soil-type">Soil Type</label>
+          <select name="soil-type" id="soil-type">
+            <option value="sandy">Sandy</option>
+            <option value="loamy">Loamy</option>
+            <option value="clay">Clay</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="season">Season</label>
+          <select name="season" id="season">
+            <option value="spring">Spring</option>
+            <option value="summer">Summer</option>
+            <option value="fall">Fall</option>
+          </select>
+        </div>
+        <button type="submit">Get Recommendations</button>
+      </form>
+    </section>
+    <section class="output-section">
+      <h2>Recommended Crop</h2>
+      <ul class="crop-list">
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-container">
+      <h3 class="footer-logo">Cropio</h3>
+      <p>&copy; 2023 Cropio</p>
+      <ul class="footer-social">
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Instagram</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="nod.js"></script>
+</body>
+</html>
