@@ -5,12 +5,12 @@ const cropRotationPatterns = {
             summer: 'Wheat',
             fall: 'Winter Wheat'
         },
-        loamy: {
+        alluvium: {
             spring: 'Soybeans',
             summer: 'Wheat',
             fall: 'Winter Wheat'
         },
-        clay: {
+        laterite: {
             spring: 'Soybeans',
             summer: 'Wheat',
             fall: 'Winter Wheat'
@@ -22,12 +22,12 @@ const cropRotationPatterns = {
             summer: 'Soybeans',
             fall: 'Winter Wheat'
         },
-        loamy: {
+        alluvium: {
             spring: 'Corn',
             summer: 'Soybeans',
             fall: 'Winter Wheat'
         },
-        clay: {
+        laterite: {
             spring: 'Corn',
             summer: 'Soybeans',
             fall: 'Winter Wheat'
@@ -39,12 +39,12 @@ const cropRotationPatterns = {
             summer: 'Corn',
             fall: 'Winter Wheat'
         },
-        loamy: {
+        alluvium: {
             spring: 'Wheat',
             summer: 'Corn',
             fall: 'Winter Wheat'
         },
-        clay: {
+        laterite: {
             spring: 'Wheat',
             summer: 'Corn',
             fall: 'Winter Wheat'
@@ -64,14 +64,13 @@ form.addEventListener('submit', (e) => {
     const recommendedCrop = cropRotationPatterns[currentCrop][soilType][season];
     
     window.location.href = `${recommendedCrop}.html`;
-}); 
-
+});
 var points = [
-    "Find the best crops to plant based on your current crops and topography.",
-    "Consider the current crops on your land when selecting new crops to plant.",
-    "Research local climate patterns and conduct soil tests to make informed decisions.",
-    "Consult with agricultural experts or local farmers for valuable insights and recommendations."
-  ];
+  "Find the most suitable crops to grow depending on your present crops and soil conditions.",
+  "Consider the current crops on your land when selecting new crops to plant.",
+  "To make educated judgements, investigate local climatic patterns and undertake soil testing.",
+  "Agricultural data from the past was used to provide significant insights and recommendations."
+];
   var i = 0;
   var j = 0;
   function typing() {
@@ -97,5 +96,5 @@ var points = [
       }
       setTimeout(typing, 1000);
     }
-}
-typing();
+  }
+  typing();
