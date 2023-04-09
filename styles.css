@@ -14,7 +14,7 @@ body {
 
     color: rgb(255, 252, 252);
 
-    background-image: url("https://images.pexels.com/photos/205410/pexels-photo-205410.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url("123.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -54,7 +54,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    opacity: 0.78;
+    opacity: 0.5;
 }
 
 nav {
@@ -389,4 +389,6 @@ nav {
     from, to { border-color: transparent }
     50% { border-color: orange; }
   }
-  
+  option[value=""][disabled] {
+    display: none;
+}
