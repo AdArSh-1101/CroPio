@@ -53,7 +53,6 @@ const cropRotationPatterns = {
 };
 
 const form = document.querySelector('form');
-const recommendedCropEl = document.querySelector('.crop-list');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -63,6 +62,7 @@ form.addEventListener('submit', (e) => {
     const season = document.getElementById('season').value;
 
     const recommendedCrop = cropRotationPatterns[currentCrop][soilType][season];
+    
+    window.location.href = `${recommendedCrop}.html`;
+}); 
 
-    recommendedCropEl.innerHTML = `<li>${recommendedCrop}</li>`;
-});
