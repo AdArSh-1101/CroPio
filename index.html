@@ -16,47 +16,58 @@
               <span></span>
           </label>
           <ul class="menu">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-          </ul>
+            <!-- changed -->
+             <li><a href="#" style="text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">About</a></li>
+             <li><a href="#" style="text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">Contact</a></li>
+         </ul>
       </nav>
-      <div class="hero" style="height: 1px; color: black;">
+      <!-- <div class="hero" style="height: 1px; color: black;"> -->
           <!-- <div class="typewriter">
               <h1>Cropio</h1>
           </div>  -->
           <!-- <h1>Cropio</h1> -->
-          <p class="typewriter" style="top: 0;"><strong style="font-size:70px;">Cropio</strong> <br> Find the best crops to plant based on your current crops and topography.</p>             
-      </div>          
+          <!-- <p class="typewriter" style="top: 0;"><strong style="font-size:70px;">Cropio</strong> <br> Find the best crops to plant based on your current crops and topography.</p>              -->
+      <!-- </div>           -->
+      <div class="hero" style="height: 1px; color: black;">
+        <div class="typewriter" style="top: 0; top: 0; text-shadow: -1px -1px 0 #ffffff, 1px -1px 0 #ffffff, -1px 1px 0 #ffffff, 1px 1px 0 #ffffff;">
+              <h1>Cropio</h1>
+              <span id="text" style="font-size: 25px;"></span>
+        </div>
+      </div>
   </header>
   <main>
       <section class="input-section">
-          <h2>Enter Your Information</h2>
+          <h2 style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Enter Your Information</h2>
           <form>
               <div class="form-group">
-                  <label for="current-crop">Current Crop</label>
-                  <select name="current-crop" id="current-crop">
+                <label for="current-crop" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;" >Current Crop</label>
+                <select required name="current-crop" id="current-crop">
+                  <!-- changed -->
+                  <option value="" disabled selected>Select your option</option>
                       <option value="corn">Corn</option>
                       <option value="wheat">Wheat</option>
                       <option value="soybeans">Soybeans</option>
                   </select>
               </div>
-              <div class="form-group">
-                  <label for="soil-type">Soil Type</label>
-                  <select name="soil-type" id="soil-type">
+              <div class="form-group" for="soil-type" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                <label for="soil-type" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Soil Type</label>
+                <select required name="soil-type" id="soil-type">
+                  <option required value="" disabled selected>Select your option</option>
                       <option value="sandy">Sandy</option>
                       <option value="loamy">Loamy</option>
                       <option value="clay">Clay</option>
                   </select>
               </div>
-              <div class="form-group">
-                  <label for="season">Season</label>
-                  <select name="season" id="season">
+              <div class="form-group" for="soil-type" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">
+                <label for="season" style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Season</label>
+                <select required name="season" id="season">
+                  <option value="" disabled selected>Select your option</option>
                       <option value="spring">Spring</option>
                       <option value="summer">Summer</option>
                       <option value="fall">Fall</option>
                   </select>
               </div>
-              <button id="get-recommendations-button">Get Recommendations</button>
+              <button type="submit">Get Recommendations</button>
           </form>
       </section>
   </main>
