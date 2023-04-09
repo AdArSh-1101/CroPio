@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CROPIO</title>
+	<link rel="stylesheet" type="text/css" href="calc.css">
+    <link rel="icon" href="logo5.png" type="image/x-icon"> 
+</head>
+<body>
+	<header>
+		<h1>Cropio</h1>
+		<nav>
+			<ul>
+				<li><a href="index.html"><small>Home</small></a></li>
+				<li><a href="about.html"><small>About</small></a></li>
+				<li><a href="contact.html"><small>Contact Us</small></a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<form>
+		<div class="container">
+			<label for="land-size">Land Size:</label>
+			<input type="number" id="land-size" name="land-size" step="any" placeholder="Enter land size" required><br>
+
+			<label for="measurement-type">Measurement Type:</label>
+			<select id="measurement-type" name="measurement-type">
+				<option value="bigha">Bigha</option>
+				<option value="hectare">Hectare</option>
+				<option value="acre">Acre</option>
+			</select><br>
+
+			<label for="cost-per-seed">Cost per Seed Bag:</label>
+			<input type="number" id="cost-per-seed-bag" name="cost-per-seed" step="any" placeholder="Enter cost of seeds" required><br>
+
+			<label for="seeds-per-acre">Seeds per Acre:</label>
+			<input type="number" id="seeds-per-acre" name="seeds-per-acre" step="any" placeholder="Enter number of seeds per acre" required><br>
+
+			<label for="sale-price">Sale Price:</label>
+			<input type="number" id="sale-price" name="sale-price" step="any" placeholder="Enter sale price per unit" required><br>
+
+			<button type="submit" onclick="calculate()">Calculate</button>
+
+			<label for="total-cost">Total Cost:</label>
+			<input type="number" id="total-cost" name="total-cost" readonly><br>
+
+			<label for="total-profit">Total Profit:</label>
+			<input type="number" id="total-profit" name="total-profit" readonly><br>
+		</div>
+		</form>
+	</main>
+	<script>
+		function calculate() {
+			let landSize = document.getElementById("land-size").value;
+			let costPerSeed = document.getElementById("cost-per-seed-bag").value;
+			let seedsPerAcre = document.getElementById("seeds-per-acre").value;
+			let salePrice = document.getElementById("sale-price").value;
+			let measurementType = document.getElementById("measurement-type").value;
+
+			let totalSeeds;
+			if (measurementType === "bigha") {
+				landSize=landSize*0.619;
+			} else if (measurementType === "hectare") {
+				landSize=landSize*2.47105;
+			}
+			totalSeeds = landSize * seedsPerAcre;
+			let totalCost = totalSeeds * costPerSeed;
+			let totalRevenue = totalSeeds * salePrice;
+			let totalProfit = totalRevenue - totalCost;
+
+			document.getElementById("total-cost").value = totalCost;
+			document.getElementById("total-profit").value = totalProfit;
+		}
+	</script>
+</body>
+</html>
