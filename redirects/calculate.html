@@ -1,75 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CROPIO</title>
-	<link rel="stylesheet" type="text/css" href="calc.css">
+    <title>Cropio</title>
+    <link rel="stylesheet" type="text/css" href="calc.css">
     <link rel="icon" href="logo5.png" type="image/x-icon"> 
 </head>
 <body>
-	<header>
-		<h1>Cropio</h1>
-		<nav>
-			<ul>
-				<li><a href="index.html"><small>Home</small></a></li>
-				<li><a href="about.html"><small>About</small></a></li>
-				<li><a href="contact.html"><small>Contact Us</small></a></li>
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<form>
-		<div class="container">
-			<label for="land-size">Land Size:</label>
-			<input type="number" id="land-size" name="land-size" step="any" placeholder="Enter land size" required><br>
+    <header>
+        <h1>Cropio</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><small>Home</small></a></li>
+                <li><a href="about.html"><small>About</small></a></li>
+                <li><a href="contact.html"><small>Contact Us</small></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="calcForm">
+            <div class="container">
+                <label for="land-size">Land Size:</label>
+                <input type="number" id="land-size" name="land-size" step="any" placeholder="Enter land size" required><br>
 
-			<label for="measurement-type">Measurement Type:</label>
-			<select id="measurement-type" name="measurement-type">
-				<option value="bigha">Bigha</option>
-				<option value="hectare">Hectare</option>
-				<option value="acre">Acre</option>
-			</select><br>
+                <label for="measurement-type">Measurement Type:</label>
+                <select id="measurement-type" name="measurement-type">
+                    <option value="bigha">Bigha</option>
+                    <option value="hectare">Hectare</option>
+                    <option value="acre">Acre</option>
+                </select><br>
 
-			<label for="cost-per-seed">Cost per Seed Bag:</label>
-			<input type="number" id="cost-per-seed-bag" name="cost-per-seed" step="any" placeholder="Enter cost of seeds" required><br>
+                <!-- <button type="submit">Calculate</button> -->
+                <button type="button" onclick="calculate()">Calculate</button>
 
-			<label for="seeds-per-acre">Seeds per Acre:</label>
-			<input type="number" id="seeds-per-acre" name="seeds-per-acre" step="any" placeholder="Enter number of seeds per acre" required><br>
-
-			<label for="sale-price">Sale Price:</label>
-			<input type="number" id="sale-price" name="sale-price" step="any" placeholder="Enter sale price per unit" required><br>
-
-			<button type="submit" onclick="calculate()">Calculate</button>
-
-			<label for="total-cost">Total Cost:</label>
-			<input type="number" id="total-cost" name="total-cost" readonly><br>
-
-			<label for="total-profit">Total Profit:</label>
-			<input type="number" id="total-profit" name="total-profit" readonly><br>
-		</div>
-		</form>
-	</main>
-	<script>
-		function calculate() {
-			let landSize = document.getElementById("land-size").value;
-			let costPerSeed = document.getElementById("cost-per-seed-bag").value;
-			let seedsPerAcre = document.getElementById("seeds-per-acre").value;
-			let salePrice = document.getElementById("sale-price").value;
-			let measurementType = document.getElementById("measurement-type").value;
-
-			let totalSeeds;
-			if (measurementType === "bigha") {
-				landSize=landSize*0.619;
-			} else if (measurementType === "hectare") {
-				landSize=landSize*2.47105;
-			}
-			totalSeeds = landSize * seedsPerAcre;
-			let totalCost = totalSeeds * costPerSeed;
-			let totalRevenue = totalSeeds * salePrice;
-			let totalProfit = totalRevenue - totalCost;
-
-			document.getElementById("total-cost").value = totalCost;
-			document.getElementById("total-profit").value = totalProfit;
-		}
-	</script>
+                <label for="total-cost">Total Cost (&#x20b9;) :</label>
+                <input type="number" id="total-cost" name="total-cost" readonly><br>
+                <label for="total-profit">Total Profit (&#x20b9;) :</label>
+                <input type="number" id="total-profit" name="total-profit" readonly><br><br><br><br>
+                <div class="disclaimer">
+                    <p><strong>Disclaimer:</strong> Please read this disclaimer carefully.</p>
+                    <p style="font-style: italic;">"The above results is based on past 5 years of data and may vary individually."</p>
+                    <p>For more information, please refer to our <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>.</p>
+                </div>
+            </div>
+        </form>
+    </main>
+    <footer>
+		<div class="footer-container">
+		<h3 class="footer-logo">Cropio</h3>
+		<p>&copy; 2023 Cropio</p>
+	    <ul class="footer-social">
+		<li><a href="#">Facebook</a></li>
+		<li><a href="#">Twitter</a></li>
+		<li><a href="#">Instagram</a></li>
+	    </ul>
+	</footer>
+    <script src="ang.js"></script>
 </body>
 </html>
